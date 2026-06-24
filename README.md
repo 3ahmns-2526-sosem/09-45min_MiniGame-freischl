@@ -1,36 +1,28 @@
-# 09-helloGH-freischl
-# Hello World – Unser erstes GitHub-Projekt
+# Avoid Game - 45-Minute Unity Mini Game Challenge
 
-## Beschreibung
-Dieses Repository enthält unser erstes Hello-World-Projekt. Ziel ist es, den grundlegenden Workflow von Git und GitHub kennenzulernen und praktisch anzuwenden.
+## Spielidee
+**Avoid Game** ist ein minimalistischer Unity-Prototyp, bei dem es darum geht, herabfallenden Hindernissen so lange wie möglich auszuweichen. Der Spieler steuert eine Figur am unteren Bildschirmrand, während von oben kontinuierlich Hindernisse spawnen und nach unten fallen. Sobald ein Hindernis den Spieler berührt, endet das Spiel sofort und es erscheint die Rückmeldung **"Game Over"**.
 
-## Ziel des Projekts
-- Einführung in Versionskontrolle mit Git  
-- Arbeiten mit einem GitHub-Repository  
-- Verstehen des typischen Workflows:
-  - Repository erstellen  
-  - Dateien hinzufügen und ändern  
-  - Commits erstellen  
-  - Änderungen pushen  
-  - Optional: Branches und Pull Requests nutzen  
+## Steuerung
+* **A / D** oder **Pfeiltaste Links / Pfeiltaste Rechts**: Spieler nach links und rechts bewegen.
 
-## Inhalt
-Das Projekt besteht aus einem einfachen Hello-World-Programm, das als Grundlage dient, um Änderungen nachzuverfolgen und den Umgang mit Git zu üben.
+## KI-Nutzung (Dokumentation)
+Für die Erstellung dieses Prototyps wurde eine KI (z. B. ChatGPT) wie folgt unterstützend eingesetzt:
+1. **Spieler-Bewegung:** Generierung eines einfachen, framerate-unabhängigen Bewegungsskripts mittels `Input.GetAxis("Horizontal")` und `Transform.Translate`.
+2. **Spawner-Logik:** Unterstützung bei der Implementierung einer `InvokeRepeating`-Methode, die in regelmäßigen Abständen Hindernisse an zufälligen X-Positionen außerhalb der Kamera instanziiert.
+3. **Kollision & UI:** Code-Schnipsel für die `OnTriggerEnter2D`-Erkennung und das Aktivieren des Game-Over-Textelements.
 
-## Verwendete Tools
-- Git  
-- GitHub  
+*Erklärung des Codes:* Der generierte Code wurde manuell geprüft. Die Bewegung nutzt `Time.deltaTime`, um ein Ruckeln zu verhindern (Framerate-Unabhängigkeit). Die Kollisionserkennung basiert auf Unity-Tags (`"Obstacle"`), um sicherzustellen, dass ausschließlich Hindernisse das Game-Over auslösen.
 
-## Workflow (kurz erklärt)
-1. Repository klonen  
-2. Datei erstellen oder bearbeiten  
-3. Änderungen mit `git add` hinzufügen  
-4. Commit mit `git commit` erstellen  
-5. Änderungen mit `git push` hochladen  
+---
 
-## Fazit
-Dieses Projekt dient als Einstieg in die Versionskontrolle und bildet die Grundlage für zukünftige, komplexere Projekte.
+## Mindestanforderungen (Übersicht)
 
-Kleine Änderung hier passiert
-
-Änderung auf GH
+1. **Unity-Projekt startet ohne Compile Errors** – Sichergestellt vor dem finalen Push.
+2. **Erkennbare Spielidee** – Ausweichen von herabfallenden Hindernissen.
+3. **Mindestens eine Interaktion** – Spielerbewegung per Tastatur (A/D oder Pfeiltasten).
+4. **Ein Ziel oder eine Win/Lose-Bedingung** – Lose-Bedingung durch Kollision mit einem Hindernis.
+5. **Feedback für die Spieler:innen** – Sichtbarer "Game Over"-Text bei Berührung.
+6. **Mindestens 3 GitHub Issues** – Dokumentiert und nachverfolgt im Repository.
+7. **Mindestens 1 Commit** – Versionsverwaltung via Git aktiv genutzt.
+8. **README mit Spielidee, Steuerung und KI-Nutzung** – Vollständig in diesem Dokument hinterlegt.
